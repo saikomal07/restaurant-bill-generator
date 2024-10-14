@@ -1,0 +1,588 @@
+<html>
+    <head>
+        <style>
+            body{
+                font: arial;
+                margin: 0px;
+            }
+            h1
+            {
+                background-color: #990000;
+                color: #FFEE63;
+                text-align: center;
+                font-size:450%;
+                font-style: italic;
+                margin-bottom: 5px;
+            }
+            h2
+            {
+                background-color: #990000;
+                color: #FFEE63;
+                text-align: center;
+                font-size:200%;
+                font-style: italic;
+                margin-bottom: 5px;
+            }
+            #nav{
+                display: flex;
+                width: 100%;
+                justify-content: space-evenly;
+            }
+            #nav button, .select button
+            {
+                background-color: #990000;
+                color: white;
+                border-radius: 7px;
+                width:150px;
+            }
+            .select
+            {
+                background-color: bisque;
+                color: white;
+                border-radius: 7px;
+                width:100%;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            #add,#dlt
+            {
+                width: 75px;
+            }
+            button:hover
+            {
+                background-color: #B2533E;
+                font-weight: bold;
+            }
+            p{
+                text-align: center;
+                margin-bottom: 2px;
+                margin-top: 3px;
+                color:#5F0F40;
+            }
+            .rtop
+            {
+                height:23%;
+                width: 100%;
+                background-color: #FFD8A9;
+                position: sticky;
+                top: 0px;
+            }
+            .below
+            {
+                display: flex;
+
+            }
+            .menu
+            {
+                background-color: #990000;
+                height: 77%;
+                width: 75%;
+            }
+            .bill
+            {
+                background-color: #FFCF81;
+                width:25%;
+                height: 100vh;
+                position: fixed;
+                right: 0px;
+                top: 170px;
+            }
+            table
+            {
+                width:100%;
+            }
+            thead
+            {
+                text-align: center;
+                font-weight: bold;
+                background-color: #994D1C;
+                color:aliceblue;
+            }
+            .item
+            {
+                width: 200px;
+                height: 225px;
+                background-color: bisque;
+                border:1px solid black;
+                border-radius: 10px;
+                flex: 0  1 calc(30%-10px);
+                margin: 10px;
+            }
+            img{
+                width: 100%;
+                height: 80%;
+                border-radius: 20px;
+            }
+            .info
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+            h5
+            {
+                margin-top: 2px;
+                margin-bottom: 2px;
+                margin-left: 7px;
+            }
+            .add
+            {
+                
+               width:60%;
+            }
+            .foods
+            {
+                display:flex ;
+                flex-wrap: wrap;
+                
+            }
+            #heading{
+                width: 100%;
+            }
+            a
+            {
+                text-decoration: none;
+                color:white;
+
+            }
+            tfoot
+            {
+                font-weight: bold;
+                background-color: #994D1C;
+                color:aliceblue;
+            }
+            tr:nth-child(even)
+            {
+                background-color: #FFD8A9;
+            }
+            td{
+                text-align: center;
+            }
+            .submit
+            {
+                background-color: green;
+                color:aliceblue;
+                font-weight: bold;
+            }
+            #tre
+            {
+                background-color: #FFCF81;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="rest.js"></script>
+        <div class="rtop">
+            <h1>B.Tech Restaurant</h1>
+            <div id="nav">
+            <button onclick="scrollToSection('tiffins')">Tiffins</button>
+            <button onclick="scrollToSection('biryani')">Biranies</button>
+            <button onclick="scrollToSection('friedrice')">Fried rice</button>
+            <button onclick="scrollToSection('drinks')">Drinks</button>
+            <button onclick="scrollToSection('icecreams')">Ice creams</button>
+            </div>
+            <p>7793904367 | email: btechresturant@hotmail.com </p>
+            <p>available on SWIGGY, ZOMATO</p>
+        </div>
+        <div class="below">
+            <div class="menu">
+                <div class="foods" id="tiffins">
+                    <div id="heading"><h2>Tiffins</h2></div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\idly.jpeg">
+                        <div class="info">
+                            <h5>Idly</h5>
+                            <h5>40/-</h5>
+                        </div>
+
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\vada.jpeg">
+                        <div class="info">
+                            <h5>vada</h5>
+                            <h5>40/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\puri.jpeg">
+                        <div class="info">
+                            <h5>puri</h5>
+                            <h5>40/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\plaindosa.jpeg">
+                        <div class="info">
+                            <h5>plain Dosa</h5>
+                            <h5>40/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\masaladosa.jpeg">
+                        <div class="info">
+                            <h5>Masala Dosa</h5>
+                            <h5>50/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\eggdosa.jpeg">
+                        <div class="info">
+                            <h5>Egg Dosa</h5>
+                            <h5>55/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\upma.jpeg">
+                        <div class="info">
+                            <h5>upma</h5>
+                            <h5>35/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\bonda.jpeg">
+                        <div class="info">
+                            <h5>Bonda</h5>
+                            <h5>40/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="foods" id="biryani">
+                    <div id="heading"><h2>Biryanies</h2></div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\dumbiryani.jpg">
+                        <div class="info">
+                            <h5>Dum Biryani</h5>
+                            <h5>180/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\fishbir.webp">
+                        <div class="info">
+                            <h5>Fish Biryani</h5>
+                            <h5>240/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\muttonbir.jpeg">
+                        <div class="info">
+                            <h5>Mutton Biryani</h5>
+                            <h5>290/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\friedchicken.jpeg">
+                        <div class="info">
+                            <h5>Fried chicken Biryani</h5>
+                            <h5>250/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\prownbir.jpeg">
+                        <div class="info">
+                            <h5>Prawns Biryani</h5>
+                            <h5>350/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\potbir.jpeg">
+                        <div class="info">
+                            <h5>Pot Biryani</h5>
+                            <h5>255/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="foods" id="friedrice">
+                    <div id="heading"><h2>Fried Rice</h2></div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\vegfried.jpeg">
+                        <div class="info">
+                            <h5>Veg Friedrice</h5>
+                            <h5>140/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\shwvegfried.jpeg">
+                        <div class="info">
+                            <h5>Schezwan vegFriedrice</h5>
+                            <h5>150/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\chickenfried.jpeg">
+                        <div class="info">
+                            <h5>checken friedrice</h5>
+                            <h5>160/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\schechiken.jpeg">
+                        <div class="info">
+                            <h5>Schezwan chicken Friedrice</h5>
+                            <h5>180/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\poha fried rice.webp">
+                        <div class="info">
+                            <h5>Poha Fried Rice</h5>
+                            <h5>140/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\prawn fried rice.webp">
+                        <div class="info">
+                            <h5>Prawn Friedrice</h5>
+                            <h5>180/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="foods" id="drinks">
+                    <div id="heading"><h2>Drinks</h2></div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\water.jpeg">
+                        <div class="info">
+                            <h5>Water</h5>
+                            <h5>20/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\lassi.jpeg">
+                        <div class="info">
+                            <h5>Lassi</h5>
+                            <h5>40/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\golisoda.jpeg">
+                        <div class="info">
+                            <h5>Golisoda</h5>
+                            <h5>30/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\cococola2.jpeg">
+                        <div class="info">
+                            <h5>Coco cola</h5>
+                            <h5>15/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\pepsi.jpeg">
+                        <div class="info">
+                            <h5>Pepsi</h5>
+                            <h5>50/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\sprit.jpeg">
+                        <div class="info">
+                            <h5>Sprite</h5>
+                            <h5>50/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\thums.jpeg">
+                        <div class="info">
+                            <h5>Thumbsup</h5>
+                            <h5>50/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="foods" id="icecreams">
+                    <div id="heading"><h2>Ice creams</h2></div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\venila.jpeg">
+                        <div class="info">
+                            <h5>venila</h5>
+                            <h5>40/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\strawberr.jpeg">
+                        <div class="info">
+                            <h5>Strawberry</h5>
+                            <h5>45/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\rosemilk.jpeg">
+                        <div class="info">
+                            <h5>Rosemilk</h5>
+                            <h5>60/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\kulfi.jpeg">
+                        <div class="info">
+                            <h5>Kulfi</h5>
+                            <h5>30/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\chocolate.jpeg">
+                        <div class="info">
+                            <h5>Chocolate</h5>
+                            <h5>50/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div><div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\butterscotch.jpeg">
+                        <div class="info">
+                            <h5>BUtterscotch</h5>
+                            <h5>55/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="C:\Users\crazz\OneDrive\Desktop\trails\foods\apricotdelight.jpeg">
+                        <div class="info">
+                            <h5>Apricot Delight</h5>
+                            <h5>35/-</h5>
+                        </div>
+                        <div  class="select">
+                            <button id="add" onclick="rowin(this)">add</button>
+                            <button id="dlt" onclick="rowout(this)">remove</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="bill">
+                <table id="table">
+                    <thead>
+                        <tr>
+                            <td>Item name</td>
+                            <td>Quantity</td>
+                            <td>Price</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                    <tfoot>
+                        <tr align="center">
+                            <td colspan="2">Total</td>
+                            <td id="total">0</td>
+                        </tr>
+                        <tr id="tre">
+                            <td colspan="3"><button class="submit" onclick="popup()">Submit</button></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+    </body>
+</html>
